@@ -17,6 +17,8 @@ datsu = c.primeList + doi + linkTwo + kan
 noten = 0
 tenhai = 1
 agari = 2
+
+
 def judgeWithoutDoi(hash, dictW, dictWo):
   if hash in dictWo:
     return dictWo[hash]
@@ -56,4 +58,15 @@ def judgeWithDoi(hash, dictW, dictWo):
     dictWo[hash] = judgement
     return judgement
 
-
+def judgeKokushi(kokushiHash):
+  fullKokushi = 2 * 3 * 5 * 7 * 11 * 13 * 17 * 19 * 23 * 29 * 31 * 37 * 41
+  kokushiAgari = [fullKokushi * card for card in c.primeKokushi]
+  kokushiTenhai = set([fullKokushi]) + set([fullKokushi / lackCard * pairCard
+                                          for lackCard in c.primeKokushi
+                                          for pairCard in c.primeKokushi])
+  if (kokushiHash in kokushiTenhai):
+    return tenhai
+  elif (kokushiHash in kokushiAgari):
+    return agari
+  else:
+    return noten
