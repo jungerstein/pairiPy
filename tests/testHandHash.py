@@ -22,3 +22,5 @@ print(h.judgeWithDoi(c.cardHash([3, 7, 8, 9]), dt, df)) # Should be tenhai
 dt = {}
 df = {}
 print(h.judgeWithDoi(c.cardHash([1, 2, 2, 4, 4, 5, 6, 6, 7, 7, 8, 8, 9, 8]), dt, df)) # Should give noten
+# TODO To implement the test.
+# print(h.judgeKokushi())
